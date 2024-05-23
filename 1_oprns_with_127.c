@@ -1,6 +1,9 @@
 
 #include<stdio.h>
 #include<string.h>
+
+// a-z: 97-122, A-Z: 65-90
+
 int main(){
 	char str[]="hello world";
 	printf(str);
@@ -8,7 +11,7 @@ int main(){
 	char str1[11],str2[11],str3[11];
 	int i,len;
 	len=strlen(str);
-	
+
 	printf("\nAfter applying AND operator, corresponding ASCII values:\n");
 	for(i=0;i<len;i++){
 		str1[i]=str[i] & 127;
