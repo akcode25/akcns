@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 #include<string.h>
 
@@ -29,8 +28,4 @@ int main(){
 		str3[i]=str[i] ^ 127;
 		printf("%c = %d \n",str[i],str3[i]);
 	}
-
 }
-
-
-
