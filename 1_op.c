@@ -24,7 +24,8 @@ int main() {
     }
 
     printf ("\nASCII values after XOR operation with 127:\n");
-    for (i=0; i<len; i++) {
+    // for (i=0; i<len; i++) {
+    for (int i = 0; str[i] != '\0'; i++) {
         str3[i] = str[i] ^ 127;
         printf("%c = %d \n", str[i], str3[i]);
     }
