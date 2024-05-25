@@ -5,8 +5,7 @@
 
 int main() {
     char str[]="hello world";
-    printf(str);
-
+    printf("original string: %s",str);
     char str1[11], str2[11], str3[11];
     int i, len;
     len = strlen(str);

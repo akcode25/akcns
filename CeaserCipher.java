@@ -58,7 +58,7 @@
 
 
 import java.util.*;
-class CeaserCipher{
+class CeaserCipher {
     static String encrypt (String s, int key){
         String ans="";
         for(int i=0;i<s.length();i++){
