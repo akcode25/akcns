@@ -29,7 +29,7 @@ void decrypt() {
         if (j >= strlen(k))
             j=0;
         int shift = toupper(k[j])-'A';
-        char ch = ((toupper(ct[i])-'A' - shift+26) % 26) + 'A';
+        char ch = ((toupper(ct[i])-'A' - shift+26 ) % 26) + 'A';
         printf("%c", ch);
     }
 }
