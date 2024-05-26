@@ -7,8 +7,7 @@ int main() {
     char str[]="hello world";
     printf("original string: %s",str);
     char str1[11], str2[11], str3[11];
-    int i, len;
-    len = strlen(str);
+    int i, len= strlen(str);
 
     printf ("\nASCII values after AND operation with 127:\n");
     for (i=0; i<len; i++) {
