@@ -81,14 +81,14 @@ class CeaserCipher {
 
     public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter thh plaintext: ");
+        System.out.println("Enter the plaintext: ");
         String pt= sc.nextLine();
-        System.out.println("Enter thh key: ");
+        System.out.println("Enter the key: ");
         int key= sc.nextInt();
         sc.close();
         String en=encrypt(pt, key);
-        System.out.println("\nEncrypted text is: "+en);
-        System.out.println("\nThe decrypted msg is: "+decryp(en, key));
+        System.out.println("Encrypted text is: "+en);
+        System.out.println("The decrypted msg is: "+decryp(en, key));
     }
 
 }
