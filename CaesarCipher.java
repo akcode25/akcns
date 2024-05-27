@@ -1,4 +1,3 @@
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -24,11 +23,10 @@ public class CaesarCipher {
         int direction = encrypt ? 1 : -1;
 
         for (char ch : str.toCharArray()) {
-            if (Character.isUpperCase(ch)) {
+            if (Character.isUpperCase(ch)) 
                 ch = (char) ('A' + (ch - 'A' + direction * key + 26) % 26);
-            } else if (Character.isLowerCase(ch)) {
+            else if (Character.isLowerCase(ch))
                 ch = (char) ('a' + (ch - 'a' + direction * key + 26) % 26);
-            }
             result.append(ch);
         }
         return result.toString();
