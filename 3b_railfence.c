@@ -4,7 +4,7 @@ void main() {
     int i, j, k, l;
     char str[20], ct[20], dt[20];
     printf("Enter the input string: ");
-    scanf("%s",&str); //gets(str);
+    scanf("%s",str); //gets(str);
     l = strlen(str);
 
     //ciphering
