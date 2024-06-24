@@ -1,5 +1,4 @@
 
-
 import java.util.Base64;
 import java.util.Scanner;
 import javax.crypto.Cipher;
@@ -42,6 +41,7 @@ e.printStackTrace();
 
 
 /*
+//scam wala
 
 import java.util.Scanner;
 import java.util.Base64;
@@ -60,7 +60,6 @@ public class AES{
 }
 
 */
-
 
 
 
@@ -112,83 +111,7 @@ public class AES {
 }
 */
 
-/*
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.GCMParameterSpec;
-import java.util.Base64;
-import java.util.Scanner;  // Import the Scanner class
 
-public class AES {
-    private SecretKey key;
-    private final int KEY_SIZE = 128;
-    private final int GCM_TAG_LENGTH = 128;  // GCM authentication tag length in bits
-    private Cipher encryptionCipher;
-
-    public void init() throws Exception {
-        KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
-        keyGenerator.init(KEY_SIZE);
-        key = keyGenerator.generateKey();
-    }
-
-    public String encrypt(String data) throws Exception {
-        byte[] dataInBytes = data.getBytes();
-        encryptionCipher = Cipher.getInstance("AES/GCM/NoPadding");
-        encryptionCipher.init(Cipher.ENCRYPT_MODE, key);
-        byte[] encryptedBytes = encryptionCipher.doFinal(dataInBytes);
-        byte[] iv = encryptionCipher.getIV();
-        byte[] encryptedIVAndText = new byte[iv.length + encryptedBytes.length];
-        System.arraycopy(iv, 0, encryptedIVAndText, 0, iv.length);
-        System.arraycopy(encryptedBytes, 0, encryptedIVAndText, iv.length, encryptedBytes.length);
-        return encode(encryptedIVAndText);
-    }
-
-    public String decrypt(String encryptedData) throws Exception {
-        byte[] dataInBytes = decode(encryptedData);
-        byte[] iv = new byte[12]; // 96-bit IV is standard for GCM
-        System.arraycopy(dataInBytes, 0, iv, 0, iv.length);
-        int encryptedSize = dataInBytes.length - iv.length;
-        byte[] encryptedBytes = new byte[encryptedSize];
-        System.arraycopy(dataInBytes, iv.length, encryptedBytes, 0, encryptedSize);
-
-        Cipher decryptionCipher = Cipher.getInstance("AES/GCM/NoPadding");
-        GCMParameterSpec spec = new GCMParameterSpec(GCM_TAG_LENGTH, iv);
-        decryptionCipher.init(Cipher.DECRYPT_MODE, key, spec);
-        byte[] decryptedBytes = decryptionCipher.doFinal(encryptedBytes);
-        return new String(decryptedBytes);
-    }
-
-    private String encode(byte[] data) {
-        return Base64.getEncoder().encodeToString(data);
-    }
-
-    private byte[] decode(String data) {
-        return Base64.getDecoder().decode(data);
-    }
-
-    public static void main(String[] args) {
-        try {
-            AES_ENCRYPTION aes_encryption = new AES_ENCRYPTION();
-            aes_encryption.init();
-
-            Scanner scanner = new Scanner(System.in);  // Create a Scanner object
-            System.out.println("Enter text to encrypt:");
-            String userInput = scanner.nextLine();  // Read user input
-
-            String encryptedData = aes_encryption.encrypt(userInput);
-            String decryptedData = aes_encryption.decrypt(encryptedData);
-
-            System.out.println("Encrypted Data : " + encryptedData);
-            System.out.println("Decrypted Data : " + decryptedData);
-
-            scanner.close();  // Close the scanner
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-}
-*/
 
 
 
