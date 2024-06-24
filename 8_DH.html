@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Diffie-Hellman Key Exchange</title>
+    </head>
+    <body>
+        <script>
+            let p =BigInt(prompt("p:"));
+            let g =BigInt(prompt("g:"));
+            let a =BigInt(prompt("alice public key a:"));
+            let b =BigInt(prompt("Bob public key b:"));
+            
+            let A = (g ** a) % p;
+            let B = (g ** b) % p;
+            let s1 = (B ** a) % p;
+            let s2 = (A ** b) % p;
+
+            document.write("p:"+p+"<br>");
+            document.write("g:"+g+"<br>");
+            document.write("a:"+a+"<br>");
+            document.write("b:"+b+"<br>");
+            document.write("Alice private key A:"+A+"<br>");
+            document.write("Bob private key B:"+B+"<br>");
+            document.write("Alice secret key s1:"+s1+"<br>");
+            document.write("Bob secret key s2:"+s2+"<br>");
+        </script>
+    </body>
+</html> 
