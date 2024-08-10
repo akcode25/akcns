@@ -27,6 +27,10 @@ public class RSA {
 		}
 	}
 
+	System.out.println("z value = " + z);
+	System.out.println("d value = " + d);
+	System.out.println("e value = " + e);
+
 	BigInteger bigMsg = BigInteger.valueOf(msg);
 	BigInteger bigN = BigInteger.valueOf(n);
 	BigInteger encryptedMsg = bigMsg.modPow(BigInteger.valueOf(e), bigN);
@@ -41,7 +45,7 @@ public class RSA {
 	}
 }
 
-//2,3,5
+//<any number <9 , 3, 5
 
 
 /*
