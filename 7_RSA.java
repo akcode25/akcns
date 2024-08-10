@@ -45,7 +45,7 @@ public class RSA {
 	}
 }
 
-//<any number <9 , 3, 5
+//(any number < 9) , 3, 5
 
 
 /*
