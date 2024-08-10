@@ -9,10 +9,10 @@
             let a =BigInt(prompt("alice public key a:"));
             let b =BigInt(prompt("Bob public key b:"));
             
-            let A = (g ** a) % p;
-            let B = (g ** b) % p;
-            let s1 = (B ** a) % p;
-            let s2 = (A ** b) % p;
+            let A = (g ** a) % p;   // 11
+            let B = (g ** b) % p;   // 2
+            let s1 = (B ** a) % p;  // 6
+            let s2 = (A ** b) % p;  // 8
 
             document.write("p:"+p+"<br>");
             document.write("g:"+g+"<br>");
