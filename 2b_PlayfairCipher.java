@@ -6,9 +6,8 @@ public class PlayfairCipher {
 
     public PlayfairCipher(String key) {
         Set<Character> charset = new LinkedHashSet<>();
-        for (char c : (key.toUpperCase() + "ABCDEFGHIKLMNOPQRSTUVWXYZ").toCharArray()) {
+        for (char c : (key.toUpperCase() + "ABCDEFGHIKLMNOPQRSTUVWXYZ").toCharArray())
             if (c >= 'A' && c <= 'Z' && c != 'J') charset.add(c);
-        }
         int i = 0;
         for (char c : charset) matrix[i / 5][i++ % 5] = c;
     }
