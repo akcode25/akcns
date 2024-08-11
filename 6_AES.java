@@ -13,34 +13,42 @@ public class AES {
         kg.init(n);
         return kg.generateKey();
     }
-    public static String encrypt(String plainText, SecretKey secretKey) throws Exception {
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-        byte[] encryptedBytes = cipher.doFinal(plainText.getBytes());
-        return Base64.getEncoder().encodeToString(encryptedBytes);
+    
+    public static String encrypt(String pt, SecretKey sk) throws Exception {
+        Cipher c = Cipher.getInstance("AES");
+        c.init(Cipher.ENCRYPT_MODE, sk);
+        byte[] enBytes = c.doFinal(pt.getBytes());
+        return Base64.getEncoder().encodeToString(enBytes);
     }
-    public static String decrypt(String cipherText, SecretKey secretKey) throws Exception {
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.DECRYPT_MODE, secretKey);
-        byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(cipherText));
-        return new String(decryptedBytes);
+    
+    public static String decrypt(String ct, SecretKey sk) throws Exception {
+        Cipher c = Cipher.getInstance("AES");
+        c.init(Cipher.DECRYPT_MODE, sk);
+        byte[] deBytes = c.doFinal(Base64.getDecoder().decode(ct));
+        return new String(deBytes);
     }
+    
     public static void main(String[] args) {
         try {
             Scanner sc = new Scanner(System.in);
             System.out.print("\nEnter text to encrypt: ");
-            String plainText = sc.nextLine();
-            SecretKey secretKey = generateKey(128);
-            String encryptedText = encrypt(plainText, secretKey);
-            System.out.println("Encrypted Text: " + encryptedText);
-            String decryptedText = decrypt(encryptedText, secretKey);
-            System.out.println("Decrypted Text: " + decryptedText);
+            String pt = sc.nextLine();
+            
+            SecretKey sk = generateKey(128);
+            
+            String enText = encrypt(pt, sk);
+            System.out.println("Encrypted Text: " + enText);
+            String deText = decrypt(enText, sk);
+            System.out.println("Decrypted Text: " + deText);
+
             sc.close();
-        } catch (Exception e) {
+        } 
+        catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
+
 
 
 /*
