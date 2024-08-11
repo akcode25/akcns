@@ -1,5 +1,5 @@
-gedit prog.java
-javac prog.java
+gedit prog.java <br>
+javac prog.java <br>
 java prog
 
 xdg-open filename.html
