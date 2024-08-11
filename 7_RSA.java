@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class RSA {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter the message to be encrypted: ");
+		System.out.print("\nEnter the message to be encrypted: ");
 		int msg = sc.nextInt();
 		System.out.print("Enter the first prime number (p): ");
 		int p = sc.nextInt();
@@ -27,13 +27,13 @@ public class RSA {
 			}
 		}
 
-		BigInteger bigMsg = BigInteger.valueOf(msg);
-		BigInteger bigN = BigInteger.valueOf(n);
-		BigInteger encryptedMsg = bigMsg.modPow(BigInteger.valueOf(e), bigN);  	     //C = (M^e) mod n
-		BigInteger decryptedMsg = encryptedMsg.modPow(BigInteger.valueOf(d), bigN);  //M = (C^d) mod n
+		BigInteger M = BigInteger.valueOf(msg);
+		BigInteger N = BigInteger.valueOf(n);
+		BigInteger C = M.modPow(BigInteger.valueOf(e), N);  //C = (M^e) mod n
+		BigInteger D = C.modPow(BigInteger.valueOf(d), N);  //M = (C^d) mod n
 
-		System.out.println("\nEncrypted message is : " + encryptedMsg);
-		System.out.println("Decrypted message is : " + decryptedMsg);  //.intValue()
+		System.out.println("\nEncrypted message is : " + C);
+		System.out.println("Decrypted message is : " + D);  //.intValue()
 		sc.close();
 	}
 
