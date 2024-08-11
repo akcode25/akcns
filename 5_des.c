@@ -44,8 +44,8 @@ int main() {
     int sboxres = s_box_sub(val, S0);
     printf("S-boz result: %x\n", sboxres);
 
-    int decrypted = ip_inv(ct);
-    printf("Decrypted text: %x\n",decrypted);
+    int dt = ip_inv(ct);
+    printf("Decrypted text: %x\n",dt);
 
     return 0;
 }
