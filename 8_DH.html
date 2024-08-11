@@ -4,15 +4,15 @@
     </head>
     <body>
         <script>
-            let p =BigInt(prompt("p:"));   //prime no.
-            let g =BigInt(prompt("g:"));   //primitiv root
-            let a =BigInt(prompt("alice public key a:"));
-            let b =BigInt(prompt("Bob public key b:"));
+            let p =BigInt(prompt("p:"));    // 11    //prime no.
+            let g =BigInt(prompt("g:"));    // 2     //primitiv root
+            let a =BigInt(prompt("alice public key a:"));  // 6
+            let b =BigInt(prompt("Bob public key b:"));    // 8
             
-            let A = (g ** a) % p;   // 11
-            let B = (g ** b) % p;   // 2
-            let s1 = (B ** a) % p;  // 6
-            let s2 = (A ** b) % p;  // 8
+            let A = (g ** a) % p;  
+            let B = (g ** b) % p;   
+            let s1 = (B ** a) % p;  
+            let s2 = (A ** b) % p;  
 
             document.write("p:"+p+"<br>");
             document.write("g:"+g+"<br>");
