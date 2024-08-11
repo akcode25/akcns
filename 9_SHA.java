@@ -8,7 +8,7 @@ public class SHA {
         String text = sc.nextLine();
 
         MessageDigest md = MessageDigest.getInstance("SHA-512");
-        byte[] hashBytes = md.digest(text.getBytes());
+        byte[] hashBytes = md.digest(text.getBytes());  //UTF-8
         StringBuilder hexStr = new StringBuilder();
 
         for (byte b: hashBytes) {
