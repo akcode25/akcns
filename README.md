@@ -3,12 +3,12 @@
 gedit prog.java
 javac prog.java
 java prog
-<b>
+<b><br>
 
 // to execute html file
 <b>
 xdg-open filename.html
-<b>
+<b><br>
 // change java version
 <b>
 sudo update-alternative --config java
