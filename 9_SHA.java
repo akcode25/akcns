@@ -4,7 +4,7 @@ import java.util.*;
 public class SHA {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Msg to hash: ");
+        System.out.print("Text to hash: ");
         String text = sc.nextLine();
 
         MessageDigest md = MessageDigest.getInstance("SHA-512");
