@@ -1,20 +1,21 @@
-import java.security.MessageDigest;
-import java.util.Scanner;
+import java.security.*;
+import java.util.*;
+
 public class SHA {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the message to be hashed: ");
+        System.out.print("Msg to hash: ");
         String text = sc.nextLine();
-            MessageDigest md = MessageDigest.getInstance("SHA-512");
-            // digest.update(text.getBytes("UTF-8"));
-            // byte[] hashBytes = digest.digest();
-            byte[] hashBytes = md.digest(text.getBytes("UTF-8"));
-            StringBuilder hexString = new StringBuilder();
-            for (byte hashByte : hashBytes) {
-                String hex = Integer.toHexString(0xff & hashByte);
-                if (hex.length() == 1) hexString.append('0');
-                hexString.append(hex);
-            }
-            System.out.println("SHA-512 Hash: " + hexString.toString());  
+
+        MessageDigest md = MessageDigest.getInstance("SHA-512");
+        byte[] hashBytes = md.digest(text.getBytes());
+        StringBuilder hexStr = new StringBuilder();
+
+        for (byte b: hashBytes) {
+            String hex = Integer.toHexString(0xff & b);
+            if (hex.length() == 1) hexStr.append('0');
+            hexStr.append(hex);
+        }
+        System.out.println("SHA-512 hash: "+hexStr.toString());
     }
 }
