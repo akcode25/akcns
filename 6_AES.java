@@ -47,7 +47,6 @@ import java.util.Scanner;
 import java.util.Base64;
 import java.security.MessageDigest;
 
-
 public class AES{
     public static void main(String[] args) throws Exception{
         Scanner scanner = new Scanner(System.in);
@@ -58,68 +57,4 @@ public class AES{
         System.out.println("Decryption text:"+plainText);
     }
 }
-
 */
-
-
-
-
-
-
-
-/*
-import java.util.Base64;
-import javax.crypto.Cipher;
-import javax.crypto.KeyGenerator;
-import javax.crypto.SecretKey;
-public class AES {
- // Method to generate a secret key
- public static SecretKey generateKey(int n) throws Exception {
- KeyGenerator kg = KeyGenerator.getInstance("AES");
- kg.init(n);
- SecretKey sk = kg.generateKey();
- return sk;
- }
- // Method to encrypt a plaintext using a secret key
- public static String encrypt(String plainText, SecretKey secretKey) throws Exception {
- Cipher cipher = Cipher.getInstance("AES");
- cipher.init(Cipher.ENCRYPT_MODE, secretKey);
- byte[] encryptedBytes = cipher.doFinal(plainText.getBytes());
- return Base64.getEncoder().encodeToString(encryptedBytes);
- }
- // Method to decrypt a ciphertext using a secret key
- public static String decrypt(String cipherText, SecretKey secretKey) throws Exception 
-{
- Cipher cipher = Cipher.getInstance("AES");
- cipher.init(Cipher.DECRYPT_MODE, secretKey);
- byte[] decryptedBytes = cipher.doFinal(Base64.getDecoder().decode(cipherText));
- return new String(decryptedBytes);
- }
- // Main method to demonstrate encryption and decryption
- public static void main(String[] args) {
- try {
- String plainText = "nmit";
- SecretKey secretKey = generateKey(128);
- String encryptedText = encrypt(plainText, secretKey);
- System.out.println("Encrypted Text: " + encryptedText);
- String decryptedText = decrypt(encryptedText, secretKey);
- System.out.println("Decrypted Text: " + decryptedText);
- } catch (Exception e) {
- e.printStackTrace();
- }
- }
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
