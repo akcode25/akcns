@@ -6,9 +6,9 @@ public class RSA {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("\nEnter the message to be encrypted: ");
 		int msg = sc.nextInt();
-		System.out.print("Enter the first prime number (p): ");
+		System.out.print("Enter 1st prime no. (p): ");
 		int p = sc.nextInt();
-		System.out.print("Enter the second prime number (q): ");
+		System.out.print("Enter 2nd prime no. (q): ");
 		int q = sc.nextInt();
 
 		int n = p * q;
