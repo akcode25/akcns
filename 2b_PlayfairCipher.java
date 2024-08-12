@@ -1,12 +1,14 @@
-import java.util.LinkedHashSet;
-import java.util.Scanner;
-import java.util.Set;
+// import java.util.LinkedHashSet;
+// import java.util.Scanner;
+// import java.util.Set;
+
+import java.util.*;
 public class PlayfairCipher {
     private char[][] matrix = new char[5][5];
 
     public PlayfairCipher(String key) {
-        Set<Character> charset = new LinkedHashSet<>();
-        for (char c : (key.toUpperCase() + "ABCDEFGHIKLMNOPQRSTUVWXYZ").toCharArray())
+        Set<Character> charset = new LinkedHashSet<>();  //(excluding 'J' neeche)
+        for (char c : (key.toUpperCase() + "ABCDEFGHIKLMNOPQRSTUVWXYZ").toCharArray()) 
             if (c >= 'A' && c <= 'Z' && c != 'J') charset.add(c);
         int i = 0;
         for (char c : charset) matrix[i / 5][i++ % 5] = c;
@@ -22,7 +24,8 @@ public class PlayfairCipher {
     private String processText(String text, boolean encrypt) {
         StringBuilder result = new StringBuilder();
         text = text.toUpperCase().replaceAll("[^A-Z]", "").replace('J', 'I');
-        if (text.length() % 2 != 0) text += 'X';
+        // text = text.toUpperCase().replace('J', 'I');
+        if (text.length() % 2 != 0) text += 'X';  //pairing
 
         for (int i = 0; i < text.length(); i += 2) {
             char a = text.charAt(i);
@@ -32,15 +35,15 @@ public class PlayfairCipher {
             int[] posA = findPosition(a);
             int[] posB = findPosition(b);
 
-            if (posA[0] == posB[0]) {
+            if (posA[0] == posB[0]) {         //same row
                 result.append(matrix[posA[0]][(posA[1] + (encrypt ? 1 : 4)) % 5]);
                 result.append(matrix[posB[0]][(posB[1] + (encrypt ? 1 : 4)) % 5]);
             } 
-            else if (posA[1] == posB[1]) {
+            else if (posA[1] == posB[1]) {    //same col
                 result.append(matrix[(posA[0] + (encrypt ? 1 : 4)) % 5][posA[1]]);
                 result.append(matrix[(posB[0] + (encrypt ? 1 : 4)) % 5][posB[1]]);
             } 
-            else {
+            else {                            //rectangle swap
                 result.append(matrix[posA[0]][posB[1]]);
                 result.append(matrix[posB[0]][posA[1]]);
             }
@@ -65,7 +68,7 @@ public class PlayfairCipher {
         PlayfairCipher cipher = new PlayfairCipher(key);
 
         String ct = cipher.encrypt(pt);
-        System.out.println("Encrypted text: " + ct);
+        System.out.println("\nEncrypted text: " + ct);
         String dt = cipher.decrypt(ct);
         System.out.println("Decrypted text: " + dt);
 
@@ -77,14 +80,11 @@ public class PlayfairCipher {
 /*
 op: 
 
-Enter key: wearetogther
-Enter plaintext: go
+Enter the key:
+wearetogether         (monarchy)
+Enter the plaintext:
+go                    (nitte meeanshi institute of technology)
 Encrypted text: HG
 Decrypted text: GO
-
-Enter key: monarchy
-Enter plaintext: nitte meeanshi institute of technology
-Encrypted text: AGSZLCIURAPBSAAQSKLZLKHPLKHYANPMQG
-Decrypted text: NITXEMEXANSHIXNSTITUTEOFTECHNOLOGY
  */
 
