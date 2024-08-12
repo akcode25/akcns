@@ -27,8 +27,7 @@ public class CaesarCipher {
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         System.out.print("\nEnter any String: ");
-        // String str = br.readLine();
-        String str = sc.nextLine();        
+        String str = sc.nextLine();                  // String str = br.readLine();
         System.out.print("Enter the key: ");
         int key = sc.nextInt();
         
@@ -41,20 +40,4 @@ public class CaesarCipher {
     }
 }
 
-/*
-Step 1: Convert the Character to Its Alphabet Position
-            ch - 'A'
-
-Step 2: Apply the Shift (Key) with Direction     
-            ch-'A' + direction * key +26        //so that +ve
-
-Step 3: 0 to 25 only. (not >= 26)
-            (ch-'A' + direction*key +26) % 26
-
-Step 4: ASCII value back
-            ((ch-'A') + direction*key +26) % 26 + 'A')
-
-Step 5: Convert Back to a Character
-     (char) ((ch-'A' + direction*key +26) % 26 + 'A');
-*/
 
