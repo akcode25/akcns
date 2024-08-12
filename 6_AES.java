@@ -48,24 +48,3 @@ public class AES {
         }
     }
 }
-
-
-
-/*
-//scam wala
-
-import java.util.Scanner;
-import java.util.Base64;
-import java.security.MessageDigest;
-
-public class AES{
-    public static void main(String[] args) throws Exception{
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter text to encrypt");
-        String plainText = scanner.nextLine();
-        String encrypt = Base64.getEncoder().encodeToString(MessageDigest.getInstance("SHA-256").digest(plainText.getBytes()));
-        System.out.println("Encryption text:"+encrypt);
-        System.out.println("Decryption text:"+plainText);
-    }
-}
-*/
