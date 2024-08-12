@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.Scanner;
 
 public class CaesarCipher {
-    static Scanner sc = new Scanner(System.in);    //integer input (key)
+    //static Scanner sc = new Scanner(System.in);    //integer input (key)
     //static BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //string input (plaintext) 
     
     public static String processString(String str, int key, boolean encrypt) {
@@ -25,8 +25,10 @@ public class CaesarCipher {
     }
 
     public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(System.in);
+        
         System.out.print("\nEnter any String: ");
-        String str = sc.nextLine();
+        String str = sc.nextLine();          // String str = br.readLine();        
         System.out.print("Enter the key: ");
         int key = sc.nextInt();
         
@@ -34,6 +36,9 @@ public class CaesarCipher {
         System.out.print("Encrypted string: " + en);        
         String de = processString(en, key, false);
         System.out.print("\nDecrypted string: " + de);
+
+        sc.close();
+
     }
 }
 
