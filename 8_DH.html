@@ -25,3 +25,53 @@
         </script>
     </body>
 </html> 
+
+
+
+
+
+<!--
+<html>
+<head>
+    <title>Diffi Hellman Key Exchange Algorithm</title>
+</head>
+<body>
+    <div>Diffi Hellman Key Exchange Algo</div>
+    <div> <label> Enter prime number p: <input type="number" id="p"> </label> </div>
+    <div> <label> Enter primitive root g: <input type="number" id="g"> </label> </div>
+    <div> <label> Enter private key for Alice A: <input type="number" id="A"> </label> </div>
+    <div> <label> Enter private key for Bob B: <input type="number" id="B"> </label> </div>
+
+    <button id="generate"> Generate Keys </button>
+    <div id="op"></div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+document.getElementById("generate").addEventListener("click", () => {
+  const getvalue = (id) => parseInt(document.getElementById(id).value);
+
+  const p = getvalue("p");
+  const g = getvalue("g");
+  const A = getvalue("A");
+  const B = getvalue("B");
+
+  const calc = (base, exponent, mod) => Math.pow(base, exponent) % mod;
+
+  // calculate public key of A:
+  const a = calc(g, A, p);
+  const b = calc(g, B, p);
+  // calculate shared secret key:
+  const ka = calc(b, A, p);
+  const kb = calc(a, B, p);
+
+  const res = `
+    <p>Alice Public key: ${a} </p>
+    <p>Bob public key: ${b} </p>
+    <p>Shared key 1: ${ka} </p>
+    <p> Shared key 2: ${kb} </p>
+    `;
+  document.getElementById("op").innerHTML = res;
+});
+-->
